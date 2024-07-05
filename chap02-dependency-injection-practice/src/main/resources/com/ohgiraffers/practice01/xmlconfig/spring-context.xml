@@ -8,12 +8,19 @@
         <constructor-arg name="nickname" value="스프링꿈나무"/>
     </bean>
 
-    <bean id ="board" class="com.ohgiraffers.common.BoardDTO">
-        <constructor-arg name="id" value="1"/>
-        <constructor-arg name="title" value="의존성 주입 연습"/>
-        <constructor-arg name="content" value="게시글의 작성자 객체를 주입 받아볼게요!"/>
-        <constructor-arg name="writer">
-        <ref bean ="member"/>
-        </constructor-arg>
+<!--    <bean id ="board" class="com.ohgiraffers.common.BoardDTO">-->
+<!--        <constructor-arg name="id" value="1"/>-->
+<!--        <constructor-arg name="title" value="의존성 주입 연습"/>-->
+<!--        <constructor-arg name="content" value="게시글의 작성자 객체를 주입 받아볼게요!"/>-->
+<!--        <constructor-arg name="writer">-->
+<!--        <ref bean ="member"/>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+
+    <bean id="board" class="com.ohgiraffers.common.BoardDTO">
+        <property name="id" value="1"/>
+        <property name="title" value="의존성 주입 연습"/>
+        <property name="content" value="게시글의 작성자 객체를 주입"/>
+        <property name="writer" ref = "member"/>
     </bean>
 </beans>
