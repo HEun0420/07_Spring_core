@@ -6,29 +6,28 @@ import com.ohgiraffers.common.PersonalAccount;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.lang.reflect.Member;
-
 @Configuration
 public class ContextConfiguration {
 
     @Bean("account")
     public Account accountGenerator() {
-        return new PersonalAccount(20,"110-234-567890");
+        return new PersonalAccount(20, "110-234-567890");
     }
+
     @Bean("member")
-    public Member memberGenerator() {
+    public MemberDTO memberGenerator() {
         /*
          * MemberDTO 생성자를 통해 Account를 생성하는 메소드를 호출 리턴값을 전달하여
          * bean을 조립할 수 있다.
-         */
+         * */
 
         MemberDTO member = new MemberDTO();
         member.setSequence(1);
         member.setName("홍길동");
+        member.setPhone("010-11234-5678");
         member.setEmail("hong123@gmail.com");
         member.setPersonalAccount(accountGenerator());
 
-        return (Member) member;
+        return member;
     }
-
 }
