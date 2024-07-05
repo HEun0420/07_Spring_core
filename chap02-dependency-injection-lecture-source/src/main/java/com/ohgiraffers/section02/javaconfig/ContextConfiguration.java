@@ -11,24 +11,24 @@ import java.lang.reflect.Member;
 @Configuration
 public class ContextConfiguration {
 
-@Bean("account")
+    @Bean("account")
     public Account accountGenerator() {
-    return new PersonalAccount(20,"110-234-567890");
-}
-@Bean("member")
-public Member memberGenerator() {
-    /*
-    * MemberDTO 생성자를 통해 Account를 생성하는 메소드를 호출 리턴값을 전달하여
-    * bean을 조립할 수 있다.
-     */
+        return new PersonalAccount(20,"110-234-567890");
+    }
+    @Bean("member")
+    public Member memberGenerator() {
+        /*
+         * MemberDTO 생성자를 통해 Account를 생성하는 메소드를 호출 리턴값을 전달하여
+         * bean을 조립할 수 있다.
+         */
 
-    MemberDTO member = new MemberDTO();
-    member.setSequence(1);
-    member.setName("홍길동");
-    member.setEmail("hong123@gmail.com");
-    member.setPersonalAccount(accountGenerator());
+        MemberDTO member = new MemberDTO();
+        member.setSequence(1);
+        member.setName("홍길동");
+        member.setEmail("hong123@gmail.com");
+        member.setPersonalAccount(accountGenerator());
 
-    return (Member) member;
-}
+        return (Member) member;
+    }
 
 }

@@ -20,7 +20,7 @@ dependencies {
     implementation 'org.springframework:spring-aop:6.1.6'
 
     compileOnly 'org.projectlombok:lombok:1.18.24'
-    annotationProcessor 'org.projectlombok:lombok:1.18.2'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
 test {
