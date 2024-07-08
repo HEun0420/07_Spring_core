@@ -1,18 +1,17 @@
-package com.ohgiraffers.section01.socpe.subsection01.singleton;
+package com.ohgiraffers.section02.subsection01.java;
 
 import com.ohgiraffers.common.Beverage;
 import com.ohgiraffers.common.Bread;
 import com.ohgiraffers.common.Product;
 import com.ohgiraffers.common.ShoppingCart;
-import lombok.ToString;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 import java.time.LocalDate;
 
-@ToString
+@Configuration
 public class ContextConfiguration {
-
     @Bean
     public Product carpBread(){
         return new Bread("붕어빵", 1000, LocalDate.now());
@@ -31,9 +30,13 @@ public class ContextConfiguration {
     }
 
     @Bean
-//    @Scope("singleton")
+    @Scope("prototype")
     public ShoppingCart cart(){
         return new ShoppingCart();
     }
 
+    @Bean(initMethod = "openShop", destroyMethod = "closeShop")
+    public Owner owner (){
+        return new Owner();
+    }
 }
