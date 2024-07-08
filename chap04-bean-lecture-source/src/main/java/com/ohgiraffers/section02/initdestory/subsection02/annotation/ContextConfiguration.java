@@ -1,4 +1,4 @@
-package com.ohgiraffers.section02.subsection02.annotation;
+package com.ohgiraffers.section02.initdestory.subsection02.annotation;
 
 import com.ohgiraffers.common.Beverage;
 import com.ohgiraffers.common.Bread;
@@ -32,7 +32,7 @@ public class ContextConfiguration {
     }
 
     @Bean
-    @Scope("singleton")
+    @Scope("prototype")
     public ShoppingCart cart(){
         return new ShoppingCart();
     }

@@ -1,9 +1,9 @@
-package com.ohgiraffers.section02.subsection02.annotation;
+package com.ohgiraffers.section02.initdestory.subsection02.annotation;
 
+import com.ohgiraffers.common.Beverage;
 import com.ohgiraffers.common.Bread;
 import com.ohgiraffers.common.Product;
 import com.ohgiraffers.common.ShoppingCart;
-import com.ohgiraffers.section02.subsection01.java.ContextConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -13,8 +13,8 @@ public class Application {
                 new AnnotationConfigApplicationContext(ContextConfiguration.class);
 
         Product carpBread = context.getBean("carpBread", Bread.class);
-        Product milk = context.getBean("milk", Bread.class);
-        Product water = context.getBean("water", Bread.class);
+        Product milk = context.getBean("milk", Beverage.class);
+        Product water = context.getBean("water", Beverage.class);
 
         ShoppingCart cart1 = context.getBean("cart", ShoppingCart.class);
         cart1.addItem(carpBread);

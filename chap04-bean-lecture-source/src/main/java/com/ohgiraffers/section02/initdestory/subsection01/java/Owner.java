@@ -1,4 +1,4 @@
-package com.ohgiraffers.section02.subsection01.java;
+package com.ohgiraffers.section02.initdestory.subsection01.java;
 
 public class Owner {
 
